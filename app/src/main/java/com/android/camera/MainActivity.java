@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
+import android.widget.Button;
 import java.io.ByteArrayOutputStream;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private Bitmap capturedImageBitmap;
 
+    private Button next;
+    private EditText editTextNome;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +39,29 @@ public class MainActivity extends AppCompatActivity {
 
         editText = findViewById(R.id.editText);
         imageView = findViewById(R.id.imageView);
+        next = findViewById(R.id.btnNavigate);
+
 
         // Check camera permission
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
         }
+
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Criar uma Intent para abrir a SecondActivity
+                Intent intent = new Intent(MainActivity.this, login.class);
+
+                // Iniciar a SecondActivity
+                startActivity(intent);
+            }
+        });
     }
+
+
+
 
     public void takePicture(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -82,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
         // For demonstration purposes, we'll just display the Base64 encoded image in a toast
         Toast.makeText(this, "Text: " + text + "\nImage: " + encodedImage, Toast.LENGTH_LONG).show();
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
