@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -20,8 +19,7 @@ import androidx.core.content.ContextCompat;
 import android.widget.Button;
 import java.io.ByteArrayOutputStream;
 
-public class MainActivity extends AppCompatActivity {
-
+public class deposito extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 101;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 102;
 
@@ -31,13 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
     private Button next;
     private EditText editTextNome;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_deposito);
 
-        editText = findViewById(R.id.editText);
+        editText = findViewById(R.id.editTextInspected);
         imageView = findViewById(R.id.imageView);
         next = findViewById(R.id.btnNavigate);
 
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Criar uma Intent para abrir a SecondActivity
-                Intent intent = new Intent(MainActivity.this, login.class);
+                Intent intent = new Intent(deposito.this, resumo.class);
 
                 // Iniciar a SecondActivity
                 startActivity(intent);
@@ -102,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         // For demonstration purposes, we'll just display the Base64 encoded image in a toast
         Toast.makeText(this, "Text: " + text + "\nImage: " + encodedImage, Toast.LENGTH_LONG).show();
     }
+
 
 
     @Override

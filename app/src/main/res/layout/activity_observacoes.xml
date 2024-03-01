@@ -16,33 +16,26 @@
         android:text="BioVetor" />
 
     <EditText
-        android:id="@+id/loginEmail"
+        android:id="@+id/editTextArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/darkGray"
-        android:padding="20dp"
-        android:background="@color/lightGray"
-        android:layout_marginTop="16dp"
-        android:hint="Seu email*"/>
+        android:hint="Observações"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:background="@color/gray"
+        android:padding="16dp"
+        android:lines="5" />
 
-    <EditText
-        android:id="@+id/loginpassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/darkGray"
-        android:padding="20dp"
-        android:background="@color/lightGray"
-        android:layout_marginTop="16dp"
-        android:hint="Senha*"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonSend"
-        android:layout_width="300dp"
+        android:id="@+id/buttonCloseInspection"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/defaultbutton"
-        android:textColor="@color/darkGray"
-        android:text="Enviar"
+        android:background="@drawable/primarybutton"
+        android:textColor="@color/white"
+        android:text="Encerrar inspeção"
         android:textAllCaps="false"
         android:textSize="18sp" />
+
 </LinearLayout>

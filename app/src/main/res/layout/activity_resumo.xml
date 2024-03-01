@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:text="BioVetor" />
+
+    <TextView
+        android:id="@+id/textEmailUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:layout_marginTop="16dp"
+        android:text="Resumo dos depósitos" />
+
+    <TextView
+        android:id="@+id/textEmailAmostrasColetadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:text="Número de amostras coletadas: 0" />
+
+    <View
+        android:id="@+id/borderView"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/lightGray" />
+
+    <TextView
+        android:id="@+id/textEmailDepositosTratados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:text="Número de depósitos tratados: 0" />
+
+    <View
+        android:id="@+id/borderView2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/lightGray" />
+
+    <TextView
+        android:id="@+id/textEmailDepositosEliminados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:text="Número de depósitos eliminados: 0" />
+
+    <View
+        android:id="@+id/borderView3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/lightGray" />
+
+    <TextView
+        android:id="@+id/textEmailDepositosUtilizados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:text="Quantidade de produtos utilizados: 0" />
+    <View
+        android:id="@+id/borderView4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/lightGray" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonContinueResume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/primarybutton"
+        android:textColor="@color/white"
+        android:text="Continuar"
+        android:textAllCaps="false"
+        android:textSize="18sp" />
+
+</LinearLayout>

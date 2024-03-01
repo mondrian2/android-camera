@@ -34,15 +34,26 @@ public class home extends AppCompatActivity {
         // Botão sair
         sair = findViewById(R.id.buttonSair);
 
+        // Proxima pagina
+        iniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( home.this, cabecalho.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Voltar para tela anterior
         sair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( home.this, MainActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent( home.this, MainActivity.class);
+                startActivity(intent2);
             }
         });
+
+
 
     }
 }

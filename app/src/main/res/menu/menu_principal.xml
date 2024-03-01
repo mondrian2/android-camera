@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+          android:id="@+id/menu_voltar"
+          android:title="@string/voltar"
+          app:showAsAction="ifRoom"
+          android:icon="@drawable/ic_back"
+        />
+
+    <item
+          android:id="@+id/menu_aumentar"
+          android:title="A+"
+          app:showAsAction="ifRoom"
+
+        />
+    <item
+          android:id="@+id/menu_diminuir"
+          android:title="A-"
+          app:showAsAction="ifRoom"
+        />
+</menu>

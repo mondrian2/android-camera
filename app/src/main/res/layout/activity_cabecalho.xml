@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:text="BioVetor*" />
+
+    <EditText
+        android:id="@+id/week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:padding="20dp"
+        android:background="@color/lightGray"
+        android:layout_marginTop="16dp"
+        android:hint="Semana epidemiológica*"/>
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:padding="20dp"
+        android:background="@color/lightGray"
+        android:layout_marginTop="16dp"
+        android:hint="Cidade*"/>
+
+    <EditText
+        android:id="@+id/state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:padding="20dp"
+        android:background="@color/lightGray"
+        android:layout_marginTop="16dp"
+        android:hint="Estado*"/>
+
+    <EditText
+        android:id="@+id/locality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:padding="20dp"
+        android:background="@color/lightGray"
+        android:layout_marginTop="16dp"
+        android:hint="Localidade*"/>
+
+    <EditText
+        android:id="@+id/sublocality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:padding="20dp"
+        android:background="@color/lightGray"
+        android:layout_marginTop="16dp"
+        android:hint="Sub Localidade*"/>
+
+    <EditText
+        android:id="@+id/zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:padding="20dp"
+        android:background="@color/lightGray"
+        android:layout_marginTop="16dp"
+        android:hint="Bairro/Zona*"/>
+
+    <EditText
+        android:id="@+id/products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:padding="20dp"
+        android:background="@color/lightGray"
+        android:layout_marginTop="16dp"
+        android:hint="Produtos Utilizados*"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/defaultbutton"
+        android:textColor="@color/darkGray"
+        android:text="Iniciar inspeção"
+        android:textAllCaps="false"
+        android:textSize="18sp" />
+</LinearLayout>

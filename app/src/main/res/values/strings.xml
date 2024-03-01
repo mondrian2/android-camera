@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">camera</string>
+    <string-array name="statusVisita_options">
+        <item>Em visitação</item>
+        <item>Pendente</item>
+        <item>Recusado</item>
+        <item>Fechado</item>
+    </string-array>
+    <string-array name="tipoImovel_options">
+        <item>Residência</item>
+        <item>comércio</item>
+        <item>Terreno Baldio</item>
+        <item>Outro</item>
+    </string-array>
+
+    <string name="voltar">Voltar</string>
 </resources>
+

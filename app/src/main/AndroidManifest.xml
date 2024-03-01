@@ -21,6 +21,27 @@
         android:theme="@style/Theme.Camera"
         tools:targetApi="31">
         <activity
+            android:name=".observacoes"
+            android:exported="false" />
+        <activity
+            android:name=".animais"
+            android:exported="false" />
+        <activity
+            android:name=".resumo"
+            android:exported="false" />
+        <activity
+            android:name=".deposito"
+            android:exported="false" />
+        <activity
+            android:name=".endereco"
+            android:exported="false" />
+        <activity
+            android:name=".inspecao"
+            android:exported="false" />
+        <activity
+            android:name=".cabecalho"
+            android:exported="false" />
+        <activity
             android:name=".home"
             android:exported="false" />
         <activity
