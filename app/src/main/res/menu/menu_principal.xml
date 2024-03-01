@@ -11,13 +11,13 @@
 
     <item
           android:id="@+id/menu_aumentar"
-          android:title="A+"
+          android:title="@string/a_more"
           app:showAsAction="ifRoom"
 
         />
     <item
           android:id="@+id/menu_diminuir"
-          android:title="A-"
+          android:title="@string/a_minus"
           app:showAsAction="ifRoom"
         />
 </menu>

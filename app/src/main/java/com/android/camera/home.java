@@ -19,7 +19,7 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         // Texto da Logo
-        logo = findViewById(R.id.textLogo);
+        //  logo = findViewById(R.id.textLogo);
 
 
 

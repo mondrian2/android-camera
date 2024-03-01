@@ -7,13 +7,18 @@
     android:gravity="center"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textLogo"
+<!--    <TextView-->
+<!--        android:id="@+id/textLogo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="18sp"-->
+<!--        android:text="BioVetor" />-->
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:text="BioVetor" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/editTextArea"

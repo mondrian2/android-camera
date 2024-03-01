@@ -7,13 +7,18 @@
     android:gravity="center"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textLogo"
+<!--    <TextView-->
+<!--        android:id="@+id/textLogo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="18sp"-->
+<!--        android:text="BioVetor" />-->
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:text="BioVetor" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/endereco"
@@ -28,19 +33,24 @@
 
     <Spinner
         android:id="@+id/spinnerStatusVisita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status da visita*"
-        android:layout_centerInParent="true"/>
+        android:layout_width="375dp"
+        android:layout_height="65dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/lightGray"
+        android:background="@color/lightGray"
+        android:text="Status da visita*" />
 
     <Spinner
         android:id="@+id/spinnerTipoImovel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tipo do imóvel*"
+        android:layout_width="375dp"
+        android:layout_height="65dp"
+        android:layout_centerInParent="true"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:layout_centerInParent="true"/>
+        android:text="Tipo do imóvel*"
+        android:textColor="@color/lightGray"
+        android:background="@color/lightGray"
+        android:textSize="18sp" />
 
 
     <androidx.appcompat.widget.AppCompatButton

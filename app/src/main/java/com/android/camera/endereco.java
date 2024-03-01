@@ -21,8 +21,11 @@ public class endereco extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_endereco);
 
+        // Criando botões de select
         spinnerStatus = findViewById(R.id.spinnerStatusVisita);
         spinnerTipoImovel =findViewById(R.id.spinnerTipoImovel);
+
+        // Criando botao de continuar
         continuar = findViewById(R.id.buttonContinue);
 
         // Crie um ArrayAdapter usando um array de strings e um layout de spinner padrão
@@ -32,7 +35,7 @@ public class endereco extends AppCompatActivity {
         ArrayAdapter<CharSequence> imoveisAdapter = ArrayAdapter.createFromResource(this,
                 R.array.tipoImovel_options, android.R.layout.simple_spinner_item);
 
-        // Especifique o layout a ser usado quando a lista de opções aparecer
+        // Especifica o layout a ser usado quando a lista de opções aparecer
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         imoveisAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -40,6 +43,8 @@ public class endereco extends AppCompatActivity {
         spinnerStatus.setAdapter(adapter);
         spinnerTipoImovel.setAdapter(imoveisAdapter);
 
+
+        // Navegar para próxima página
         continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

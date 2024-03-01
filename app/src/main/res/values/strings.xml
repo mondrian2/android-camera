@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">camera</string>
+    <string name="app_name">BioVetor</string>
+
     <string-array name="statusVisita_options">
         <item>Em visitação</item>
         <item>Pendente</item>
         <item>Recusado</item>
         <item>Fechado</item>
     </string-array>
+
     <string-array name="tipoImovel_options">
         <item>Residência</item>
         <item>comércio</item>
@@ -14,5 +16,7 @@
     </string-array>
 
     <string name="voltar">Voltar</string>
+    <string name="a_more">A+</string>
+    <string name="a_minus">A-</string>
 </resources>
 
