@@ -48,7 +48,7 @@ public class home extends AppCompatActivity {
         sair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent( home.this, MainActivity.class);
+                Intent intent2 = new Intent( home.this, home.class);
                 startActivity(intent2);
             }
         });
