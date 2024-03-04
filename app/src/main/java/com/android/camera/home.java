@@ -22,7 +22,6 @@ public class home extends AppCompatActivity {
         //  logo = findViewById(R.id.textLogo);
 
 
-
         // Email do usuario logado
         String email = "usuario@gmail.com";
         TextoEmail = findViewById(R.id.textEmailUser);

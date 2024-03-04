@@ -6,7 +6,6 @@
     android:gravity="center"
     android:padding="16dp">
 
-
 <!--    <TextView-->
 <!--        android:id="@+id/textLogo"-->
 <!--        android:layout_width="match_parent"-->
@@ -39,13 +38,20 @@
         android:text="Enviar Foto"
         android:onClick="takePicture"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:adjustViewBounds="true"
-        android:visibility="visible"/>
+    <ScrollView
+        android:layout_width="314dp"
+        android:layout_height="67dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:visibility="visible"/>
+
+    </ScrollView>
+
 
     <TextView
         android:id="@+id/textLabelA1Inspected"
@@ -132,5 +138,6 @@
         android:textColor="@color/white"
         android:padding="20dp"
         android:text="Continuar" />
+
 
 </LinearLayout>

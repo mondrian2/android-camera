@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,11 +28,35 @@ public class login extends AppCompatActivity {
         password = findViewById(R.id.loginpassword);
 
 
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent6 = new Intent(login.this, home.class);
-                startActivity(intent6);
+
+                String usuario = user.getText().toString();
+                String senha = password.getText().toString();
+
+                EditText editTextEmail = findViewById(R.id.loginEmail);
+                EditText editTextSenha = findViewById(R.id.loginpassword);
+
+                // Verificar se o campo está vazio
+                if (TextUtils.isEmpty(usuario)) {
+                    // Se estiver vazio, exibir uma mensagem de erro
+                    editTextEmail.setError("Campo Email é obrigatório");
+                    return;
+                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(usuario).matches()) {
+                    // Se não for do tipo email exibir uma mensagem de erro
+                    editTextEmail.setError("Endereço de e-mail inválido");
+                    return;
+                }
+                else if (TextUtils.isEmpty(senha)) {
+                    // Se estiver vazio, exibir uma mensagem de erro
+                    editTextSenha.setError("Campo Senha é obrigatório");
+                }else{
+                    Intent intent6 = new Intent(login.this, home.class);
+                    startActivity(intent6);
+                }
+
             }
         });
 
