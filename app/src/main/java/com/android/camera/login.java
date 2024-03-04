@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
 
 public class login extends AppCompatActivity {
     private Button login;
@@ -26,8 +25,6 @@ public class login extends AppCompatActivity {
         login = findViewById(R.id.buttonSend);
         user = findViewById(R.id.loginEmail);
         password = findViewById(R.id.loginpassword);
-
-
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,27 +71,6 @@ public class login extends AppCompatActivity {
         return true;
     }
 
-    // Verificando qual botão do menu foi clicado
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//
-//        switch (item.getItemId()) {
-//            case R.id.menu_voltar:
-//                // Ação quando o Item de voltar é selecionado
-//                Toast.makeText(login.this, "Item Voltar", Toast.LENGTH_SHORT).show();
-//                return true;
-//            case R.id.menu_aumentar:
-//                // Ação quando o Item 2 é selecionado
-//                Toast.makeText(login.this, "Item Aumentar", Toast.LENGTH_SHORT).show();
-//                return true;
-//            case R.id.menu_diminuir:
-//                // Ação quando o Item 2 é selecionado
-//                Toast.makeText(login.this, "Item Diminuir", Toast.LENGTH_SHORT).show();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//
-//    }
+
 
 }
