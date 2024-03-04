@@ -16,7 +16,6 @@
         android:id="@+id/endereco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/darkGray"
         android:padding="20dp"
         android:background="@color/lightGray"
         android:layout_marginTop="16dp"

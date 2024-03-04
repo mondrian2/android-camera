@@ -15,7 +15,6 @@ public class observacoes extends AppCompatActivity {
         setContentView(R.layout.activity_observacoes);
 
         encerrarInspecao = findViewById(R.id.buttonCloseInspection);
-
         encerrarInspecao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

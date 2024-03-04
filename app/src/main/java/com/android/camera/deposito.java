@@ -22,11 +22,9 @@ import java.io.ByteArrayOutputStream;
 public class deposito extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 101;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 102;
-
     private EditText editText;
     private ImageView imageView;
     private Bitmap capturedImageBitmap;
-
     private Button next;
     private EditText editTextNome;
     @Override
@@ -38,12 +36,10 @@ public class deposito extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         next = findViewById(R.id.btnNavigate);
 
-
         // Check camera permission
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
         }
-
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,9 +52,6 @@ public class deposito extends AppCompatActivity {
             }
         });
     }
-
-
-
 
     public void takePicture(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -99,7 +92,6 @@ public class deposito extends AppCompatActivity {
         // For demonstration purposes, we'll just display the Base64 encoded image in a toast
         Toast.makeText(this, "Text: " + text + "\nImage: " + encodedImage, Toast.LENGTH_LONG).show();
     }
-
 
 
     @Override
