@@ -18,6 +18,8 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        TextoEmail = findViewById(R.id.textEmailUser);
+
         // Recuperar o email do usuário logado como um extra
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("EMAIL")) {
@@ -45,12 +47,9 @@ public class home extends AppCompatActivity {
         sair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent( home.this, home.class);
+                Intent intent2 = new Intent( home.this, login.class);
                 startActivity(intent2);
             }
         });
-
-
-
     }
 }
