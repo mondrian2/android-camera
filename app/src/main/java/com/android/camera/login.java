@@ -51,8 +51,9 @@ public class login extends AppCompatActivity {
                 else if (TextUtils.isEmpty(senha)) {
                     // Se estiver vazio, exibir uma mensagem de erro
                     editTextSenha.setError("Campo Senha é obrigatório");
+                    return;
                 }else{
-                    // Redireciona para proxima tela
+                    // Redireciona para próxima tela
                     Intent intent6 = new Intent(login.this, home.class);
                     intent6.putExtra("EMAIL", usuario);
                     startActivity(intent6);
@@ -64,13 +65,10 @@ public class login extends AppCompatActivity {
     }
 
     // Gerando um menu
-
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_principal, menu);
         return true;
     }
-
-
 
 }

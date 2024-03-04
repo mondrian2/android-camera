@@ -34,7 +34,7 @@ public class home extends AppCompatActivity {
         // Botão sair
         sair = findViewById(R.id.buttonSair);
 
-        // Proxima pagina
+        // Próxima página
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
