@@ -18,14 +18,13 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Texto da Logo
-        //  logo = findViewById(R.id.textLogo);
-
-
-        // Email do usuario logado
-        String email = "usuario@gmail.com";
-        TextoEmail = findViewById(R.id.textEmailUser);
-        TextoEmail.setText(email);
+        // Recuperar o email do usuário logado como um extra
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("EMAIL")) {
+            String email = intent.getStringExtra("EMAIL");
+            // Exibir o email na TextView
+            TextoEmail.setText(email);
+        }
 
         // Botão iniciar expediente
         iniciar = findViewById(R.id.buttonIniciar);
@@ -41,7 +40,6 @@ public class home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         // Voltar para tela anterior
         sair.setOnClickListener(new View.OnClickListener() {

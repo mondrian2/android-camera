@@ -33,9 +33,11 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // Valores dos inputs
                 String usuario = user.getText().toString();
                 String senha = password.getText().toString();
 
+                // Campos para setar as mensagens de erros
                 EditText editTextEmail = findViewById(R.id.loginEmail);
                 EditText editTextSenha = findViewById(R.id.loginpassword);
 
@@ -53,7 +55,9 @@ public class login extends AppCompatActivity {
                     // Se estiver vazio, exibir uma mensagem de erro
                     editTextSenha.setError("Campo Senha é obrigatório");
                 }else{
+                    // Redireciona para proxima tela
                     Intent intent6 = new Intent(login.this, home.class);
+                    intent6.putExtra("EMAIL", usuario);
                     startActivity(intent6);
                 }
 
