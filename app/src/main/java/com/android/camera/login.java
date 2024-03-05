@@ -29,40 +29,45 @@ public class login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Valores dos inputs
-                String usuario = user.getText().toString();
-                String senha = password.getText().toString();
-
-                // Campos para setar as mensagens de erros
-                EditText editTextEmail = findViewById(R.id.loginEmail);
-                EditText editTextSenha = findViewById(R.id.loginpassword);
-
-                // Verificar se o campo está vazio
-                if (TextUtils.isEmpty(usuario)) {
-                    // Se estiver vazio, exibir uma mensagem de erro
-                    editTextEmail.setError("Campo Email é obrigatório");
-                    return;
-                } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(usuario).matches()) {
-                    // Se não for do tipo email exibir uma mensagem de erro
-                    editTextEmail.setError("Endereço de e-mail inválido");
-                    return;
-                }
-                else if (TextUtils.isEmpty(senha)) {
-                    // Se estiver vazio, exibir uma mensagem de erro
-                    editTextSenha.setError("Campo Senha é obrigatório");
-                    return;
-                }else{
-                    // salva no storage
-                    saveLoginStorage();
-                    // Redireciona para próxima tela
-                    Intent intent = new Intent(login.this, home.class);
-                    intent.putExtra("EMAIL", usuario);
-                    startActivity(intent);
-                }
+                loginValidate();
             }
         });
 
+    }
+    private void loginValidate(){
+        // Valores dos inputs
+        String usuario = user.getText().toString();
+        String senha = password.getText().toString();
+
+        // Campos para setar as mensagens de erros
+        EditText editTextEmail = findViewById(R.id.loginEmail);
+        EditText editTextSenha = findViewById(R.id.loginpassword);
+
+        // Verificar se o campo está vazio
+        if (TextUtils.isEmpty(usuario)) {
+            // Se estiver vazio, exibir uma mensagem de erro
+            editTextEmail.setError("Campo Email é obrigatório");
+            return;
+        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(usuario).matches()) {
+            // Se não for do tipo email exibir uma mensagem de erro
+            editTextEmail.setError("Endereço de e-mail inválido");
+            return;
+        }
+        else if (TextUtils.isEmpty(senha)) {
+            // Se estiver vazio, exibir uma mensagem de erro
+            editTextSenha.setError("Campo Senha é obrigatório");
+            return;
+        }else{
+
+            // salva no storage
+            saveLoginStorage();
+
+            // Redireciona para próxima tela
+            Intent intent = new Intent(login.this, home.class);
+            // Passa campo  email como intent(outra forma de passar valores)
+            intent.putExtra("EMAIL", usuario);
+            startActivity(intent);
+        }
     }
 
     private void saveLoginStorage(){
