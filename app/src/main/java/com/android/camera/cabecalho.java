@@ -10,124 +10,131 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class cabecalho extends AppCompatActivity {
-
+    private static final String PREFS_NAME = "MyPrefsFile";
     private Button iniciarInspedicao;
-    private EditText semana;
-    private EditText cidade;
-    private EditText estado;
-    private EditText localidade;
-    private EditText sublocalidade;
-    private EditText zona;
-    private EditText produtos;
-
-    private TextView TexteObjeto;
+    private EditText editTextWeek;
+    private EditText editTextCity;
+    private EditText editTextState;
+    private EditText editTextLocality;
+    private EditText editTextSubLocality;
+    private EditText editTextZone;
+    private EditText editTextProducts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cabecalho);
 
-        // Local dos campos
-        EditText semana = findViewById(R.id.week);
-        EditText cidade = findViewById(R.id.city);
-        EditText estado = findViewById(R.id.state);
-        EditText localidade = findViewById(R.id.locality);
-        EditText sublocalidade = findViewById(R.id.sublocality);
-        EditText zona = findViewById(R.id.zone);
-        EditText produtos = findViewById(R.id.products);
+        editTextWeek = findViewById(R.id.week);
+        editTextCity = findViewById(R.id.city);
+        editTextState = findViewById(R.id.state);
+        editTextLocality = findViewById(R.id.locality);
+        editTextSubLocality = findViewById(R.id.sublocality);
+        editTextZone = findViewById(R.id.zone);
+        editTextProducts = findViewById(R.id.products);
 
-        // Valores dos inputs
-        String week = semana.getText().toString();
-        String city = cidade.getText().toString();
-        String state = estado.getText().toString();
-        String locality = localidade.getText().toString();
-        String sublocality = sublocalidade.getText().toString();
-        String zone = zona.getText().toString();
-        String products = produtos.getText().toString();
+        iniciarInspedicao = findViewById(R.id.buttonSend);
 
-        iniciarInspedicao =  findViewById(R.id.buttonSend);
-
-        // Ir para a próxima tela
         iniciarInspedicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Validar();
-                // salvarDadosFormulario();
-
-                // Redireciona para proxima tela
-                Intent intent4 = new Intent( cabecalho.this, inspecao.class);
-                startActivity(intent4);
+                Validar();
             }
         });
     }
 
+
+    // Salvar os dados no strage
+    private void saveStorage(){
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("week", editTextWeek.getText().toString());
+        editor.putString("city", editTextCity.getText().toString());
+        editor.putString("state", editTextState.getText().toString());
+        editor.putString("locality", editTextLocality.getText().toString());
+        editor.putString("subLocality", editTextSubLocality.getText().toString());
+        editor.putString("zone", editTextZone.getText().toString());
+        editor.putString("products", editTextProducts.getText().toString());
+        editor.apply();
+
+        saveFormData();
+
+        // ir para próxima tela
+
+        Intent intent = new Intent( cabecalho.this, inspecao.class);
+        startActivity(intent);
+
+    }
+
+    // Gera Mensagem na tela com os dados dos unputs
+    private void saveFormData() {
+        String week = editTextWeek.getText().toString();
+        String city = editTextCity.getText().toString();
+        String state = editTextState.getText().toString();
+        String locality = editTextLocality.getText().toString();
+        String subLocality = editTextSubLocality.getText().toString();
+        String zone = editTextZone.getText().toString();
+        String products = editTextProducts.getText().toString();
+
+        // Aqui você pode implementar a lógica para salvar os dados, por exemplo, em um banco de dados ou em um arquivo
+
+        // Exemplo de exibição dos dados em um Toast
+        String message = "Semana: " + week + "\n" +
+                "Cidade: " + city + "\n" +
+                "Estado: " + state + "\n" +
+                "Localidade: " + locality + "\n" +
+                "Sublocalidade: " + subLocality + "\n" +
+                "Zona: " + zone + "\n" +
+                "Produtos: " + products;
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+
     private void Validar(){
         // Valores dos inputs
-        String week = semana.getText().toString();
-        String city = cidade.getText().toString();
-        String state = estado.getText().toString();
-        String locality = localidade.getText().toString();
-        String sublocality = sublocalidade.getText().toString();
-        String zone = zona.getText().toString();
-        String products = produtos.getText().toString();
+        String week = editTextWeek.getText().toString();
+        String city = editTextCity.getText().toString();
+        String state = editTextState.getText().toString();
+        String locality =editTextLocality.getText().toString();
+        String sublocality = editTextSubLocality.getText().toString();
+        String zone = editTextZone.getText().toString();
+        String products = editTextProducts.getText().toString();
 
         // Verificar se o campo está vázio
                 if(TextUtils.isEmpty(week)) {
                     // Se estiver vázio, exibir uma mensagem de erro
-                    semana.setError("Campo Semana é obrigatório");
+                    editTextWeek.setError("Campo Semana é obrigatório");
                     return;
                 }else if (TextUtils.isEmpty(city)) {
-                    cidade.setError("Campo Cidade é obrigatório");
+                    editTextCity.setError("Campo Cidade é obrigatório");
                     return;
                 }else if (TextUtils.isEmpty(state)) {
-                    estado.setError("Campo Estado é obrigatório");
+                    editTextState.setError("Campo Estado é obrigatório");
                     return;
                 }else if (TextUtils.isEmpty(locality)) {
-                    localidade.setError("Campo Localidade é obrigatório");
+                   editTextLocality.setError("Campo Localidade é obrigatório");
                     return;
                 }else if (TextUtils.isEmpty(sublocality)) {
-                    sublocalidade.setError("Campo Sublocalidade é obrigatório");
+                    editTextSubLocality.setError("Campo Sublocalidade é obrigatório");
                     return;
                 }else if (TextUtils.isEmpty(zone)) {
-                    zona.setError("Campo Zona é obrigatório");
+                    editTextZone.setError("Campo Zona é obrigatório");
                     return;
                 }else if (TextUtils.isEmpty(products)) {
-                    produtos.setError("Campo Produtos é obrigatório");
+                    editTextProducts.setError("Campo Produtos é obrigatório");
                     return;
                 }else{
                     // salva dados
-                    salvarDadosFormulario();
 
+                    saveStorage();
                     // Redireciona para proxima tela
                     Intent intent4 = new Intent( cabecalho.this, inspecao.class);
                     startActivity(intent4);
                 }
-    }
-
-    // Método para salvar os dados do formulário
-    private void salvarDadosFormulario() {
-
-        // Valores dos inputs
-        String week = semana.getText().toString();
-        String city = cidade.getText().toString();
-        String state = estado.getText().toString();
-        String locality = localidade.getText().toString();
-        String sublocality = sublocalidade.getText().toString();
-        String zone = zona.getText().toString();
-        String products = produtos.getText().toString();
-
-        SharedPreferences sharedPreferences = getSharedPreferences("MeuSharedPreferences", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("week", week);
-        editor.putString("city", city);
-        editor.putString("state", state);
-        editor.putString("locality", locality);
-        editor.putString("sublocality", sublocality);
-        editor.putString("zone", zone);
-        editor.putString("products", products);
-        editor.apply();
     }
 
 }
