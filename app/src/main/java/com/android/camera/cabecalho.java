@@ -70,7 +70,7 @@ public class cabecalho extends AppCompatActivity {
 
     }
 
-    // Gera Mensagem na tela com os dados dos unputs
+    // Gera Mensagem na tela com os dados dos inputs
     private void saveFormData() {
         String week = editTextWeek.getText().toString();
         String city = editTextCity.getText().toString();
