@@ -25,6 +25,7 @@ public class home extends AppCompatActivity {
         if (intent != null && intent.hasExtra("EMAIL")) {
             String email = intent.getStringExtra("EMAIL");
             // Exibir o email na TextView
+
             TextoEmail.setText(email);
         }
 
