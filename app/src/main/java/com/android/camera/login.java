@@ -2,7 +2,9 @@ package com.android.camera;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class login extends AppCompatActivity {
+    private static final String PREFS_NAME = "MyLogin";
     private Button login;
     private EditText user;
     private EditText password;
@@ -50,12 +53,26 @@ public class login extends AppCompatActivity {
                     editTextSenha.setError("Campo Senha é obrigatório");
                     return;
                 }else{
+                    // salva no storage
+                    saveLoginStorage();
                     // Redireciona para próxima tela
-                    Intent intent6 = new Intent(login.this, home.class);
-                    intent6.putExtra("EMAIL", usuario);
-                    startActivity(intent6);
+                    Intent intent = new Intent(login.this, home.class);
+                    intent.putExtra("EMAIL", usuario);
+                    startActivity(intent);
                 }
             }
         });
+
+    }
+
+    private void saveLoginStorage(){
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+
+        // Salvar os dados quando o botão for clicado
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("user", user.getText().toString());
+        editor.putString("password", password.getText().toString());
+        editor.apply();
+
     }
 }
